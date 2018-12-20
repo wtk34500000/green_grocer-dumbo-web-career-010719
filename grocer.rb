@@ -4,7 +4,7 @@ def consolidate_cart(cart)
     k.each do|s, t|
     count=0
     cart.each do |k2|
-      if k2== k
+      if k2 == k
       count+=1
       end
        end
