@@ -18,24 +18,20 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  binding.pry
-    coupons.each 
   # code here
   hash={}
   cart.each do |k, v|
-  
-    coupons.each do |s, t|
-      if k == t && v[:count]>=coupons[:num]
-         v[:count]=v[:count]-coupons[:num]
-         hash["#{k} W/COUPONS"]={:price => coupons[:cost], 
+    coupons.each do |s|
+      if k == s[:item] && v[:count]>=s[:num]
+        
+         v[:count]=v[:count]-s[:num]
+
+         hash["#{k} W/COUPONS"]={:price => s[:cost], 
                                 :clearance => v[:clearance],
                                 :count =>v[:count]}
-      elsif hash["#{k} W/COUPON"]
-           result["#{k} W/COUPON"][:count] += 1
-      else
-        hash[k]=v
       end
     end
+    hash[k]=v
   end
   hash
 end	 	
