@@ -18,6 +18,8 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+  binding.pry
+    coupons.each 
   # code here
   hash={}
   cart.each do |k, v|
