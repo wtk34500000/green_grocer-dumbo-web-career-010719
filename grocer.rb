@@ -24,9 +24,7 @@ def apply_coupons(cart, coupons)
   count=0
     coupons.each do |s|     
       if k == s[:item] && v[:count]>=s[:num]
-      
          v[:count]=v[:count]-s[:num]
-
          hash["#{k} W/COUPON"]={:price => s[:cost], 
                                 :clearance => v[:clearance],
                                 :count => count+=1}
