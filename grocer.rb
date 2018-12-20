@@ -23,7 +23,7 @@ def apply_coupons(cart, coupons)
   # code here
   hash={}
   cart.each do |k, v|
-    binding.pry
+  
     coupons.each do |s, t|
       if k == t && v[:count]>=coupons[:num]
          v[:count]=v[:count]-coupons[:num]
