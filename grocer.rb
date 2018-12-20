@@ -22,19 +22,20 @@ def apply_coupons(cart, coupons)
   hash={}
   cart.each do |k, v|
     coupons.each do |s|
+    count =0
       if k == s[:item] && v[:count]>=s[:num]
         
          v[:count]=v[:count]-s[:num]
 
-         hash["#{k} W/COUPON"]={:price => s[:cost], 
+         hash["#{k} W/COUPONS"]={:price => s[:cost], 
                                 :clearance => v[:clearance],
-                                :count =>v[:count]}
+                                :count => count+=1}
       end
     end
     hash[k]=v
   end
   hash
-end	 	
+end		 	
 
 def apply_clearance(cart)
   # code here
