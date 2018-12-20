@@ -11,6 +11,7 @@ def consolidate_cart(cart)
      t[:count]=count
     end
   end
+  cart.flatten
 end
 
 def apply_coupons(cart, coupons)
