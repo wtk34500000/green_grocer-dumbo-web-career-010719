@@ -11,7 +11,7 @@ def consolidate_cart(cart)
      t[:count]=count
     end
   end
-  cart.flatten
+  return h3 = Hash[cart.map {|key, value| [key, value]}]
 end
 
 def apply_coupons(cart, coupons)
