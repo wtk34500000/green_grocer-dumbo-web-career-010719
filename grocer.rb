@@ -26,7 +26,7 @@ def apply_coupons(cart, coupons)
         
          v[:count]=v[:count]-s[:num]
 
-         hash["#{k} W/COUPONS"]={:price => s[:cost], 
+         hash["#{k} W/COUPON"]={:price => s[:cost], 
                                 :clearance => v[:clearance],
                                 :count =>v[:count]}
       end
