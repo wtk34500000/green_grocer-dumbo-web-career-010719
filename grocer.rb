@@ -18,6 +18,22 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
+  def apply_coupons(cart, coupons)
+  # code here
+  hash={}
+  cart.each do |k, v|
+    coupons.each do |s, t|
+      if k == t
+      v[:count]=cart[k][:count]-coupons[:num]
+        hash["#{k} W/COUPONS"]={:price => coupons[:cost], 
+                                :clearance => cart[k][:clearance],
+                                :count =>v[:count]  }
+      end
+      hash[k]=v
+    end
+  end
+  hash
+end
 end
 
 def apply_clearance(cart)
