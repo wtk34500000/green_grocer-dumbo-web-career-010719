@@ -1,17 +1,19 @@
 def consolidate_cart(cart)
   # code here
+  hash={}
   cart.uniq.each do |k|
     k.each do|s, t|
+    hash[s]=t
     count=0
     cart.each do |k2|
-      if k2 == k
+      if k == k2
       count+=1
       end
        end
      t[:count]=count
     end
   end
-  return h3 = Hash[cart.map {|key, value| [key, value]}]
+  hash
 end
 
 def apply_coupons(cart, coupons)
